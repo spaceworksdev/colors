@@ -17,10 +17,13 @@
                     </a>
                 @endif
                 @if (EcommerceHelper::isCompareEnabled())
-                    <a aria-label="{{ __('Add To Compare') }}" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="{{ route('public.compare.add', $product->id) }}">
+                    <!-- <a aria-label="{{ __('Add To Compare') }}" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="{{ route('public.compare.add', $product->id) }}">
                         <i class="fi-rs-shuffle"></i>
-                    </a>
+                    </a> -->
                 @endif
+            </div>
+            <div class="product-action-1 product-action-2">
+                <a class="buy-now-button" href="#">Buy Now</a>
             </div>
             <div class="product-badges product-badges-position product-badges-mrg">
                 @if ($product->isOutOfStock())
@@ -74,13 +77,13 @@
 
                 @if (EcommerceHelper::isCartEnabled())
                     <div class="add-cart">
-                        <a aria-label="{{ __('Add To Cart') }}"
+                        <!-- <a aria-label="{{ __('Add To Cart') }}"
                             class="action-btn add-to-cart-button add mt-md-0 mt-3"
                             data-id="{{ $product->id }}"
                             data-url="{{ route('public.ajax.cart.store') }}"
                             href="#">
                             <i class="fi-rs-shopping-cart mr-5"></i> <span class="d-inline-block">{{ __('Add') }}</span>
-                        </a>
+                        </a> -->
                     </div>
                 @endif
             </div>

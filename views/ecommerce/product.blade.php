@@ -18,6 +18,117 @@
     Theme::asset()->container('footer')->usePath()->add('jquery-ui-js', 'js/plugins/jquery-ui.js');
 @endphp
 
+<!-- modal for size guide -->
+<div  class="modal-box hidden" id="modal">
+    <div class="modal-content">
+        <button class="cancel-btn" id="cancel">x</button>
+        <div class="modal-text">
+        <div class='p-2 p-md-5'>
+            <h2 class="h2 fw-bold text-center" style="text-align:center;">Size Guide</h2>
+                                                        <table class="table border-none table-striped ">
+                                                            <tbody>
+                                                            <tr class="">
+                                                                <th>USA</th>
+                                                                <th>UK</th>
+                                                                <th>France</th>
+                                                                <th>Japanese</th>
+                                                                <th>Bust</th>
+                                                                <th>Waist</th>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <th>4</th>
+                                                                <th>8</th>
+                                                                <th>36</th>
+                                                                <th>7</th>
+                                                                <th>32</th>
+                                                                <th>61cm</th>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <th>4</th>
+                                                                <th>8</th>
+                                                                <th>36</th>
+                                                                <th>7</th>
+                                                                <th>32</th>
+                                                                <th>61cm</th>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <th>4</th>
+                                                                <th>8</th>
+                                                                <th>36</th>
+                                                                <th>7</th>
+                                                                <th>32</th>
+                                                                <th>61cm</th>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <th>4</th>
+                                                                <th>8</th>
+                                                                <th>36</th>
+                                                                <th>7</th>
+                                                                <th>32</th>
+                                                                <th>61cm</th>
+                                                            </tr>
+                                                            </tbody>
+                                                            
+                                                        </table>
+        </div>
+        </div>
+
+    </div>
+</div>
+<div  class="modal-box hidden" id="modal-return">
+    <div class="modal-content">
+        <button class="cancel-btn" id="cancel-return">x</button>
+        <div class="modal-text">
+        <div class='' style="padding:20px">
+            <h2 class="h2 fw-bold text-center">Delivery and Return</h2>
+            <div class="p-4">
+                <h3 class="fw-bold h5">Our parcel courier service</h3>
+                <p>
+                    Ecomart is proud to offer an exceptional international parcel shipping service. It is straightforward and very easy to organise international parcel shipping. Our customer service team works around the clock to make sure that you receive high quality courier service from start to finish.
+                    <br/>
+                    <br/>
+                    Sending a parcel with us is simple. To start the process you will first need to get a quote using our free online quotation service. From this, you’ll be able to navigate through the online form to book a collection date for your parcel, selecting a shipping day suitable for you.
+
+                </p>
+                <h5  class="fw-bold h5 mt-4">Shipping Time</h5>
+                <p>
+                    The shipping time is based on the shipping method you chose.
+                    <br/>
+                    EMS takes about 5-10 working days for delivery.
+                    <br/>
+                    DHL takes about 2-5 working days for delivery. <br/>
+                    DPEX takes about 2-8 working days for delivery.<br/>
+                    JCEX takes about 3-7 working days for delivery.<br/>
+                    China Post Registered Mail takes 20-40 working days for delivery.
+                </p>
+
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+<div  class="modal-box hidden" id="modal-ask">
+    <div class="modal-content">
+        <button class="cancel-btn" id="cancel-ask">x</button>
+        <div class="modal-text">
+        <div class='' style="padding:15px">
+            <h2 class="h2 fw-bold text-center">Have a question?</h2>
+            <div class="p-4">
+                <form>
+                    <input class="p-4 mb-3" type="text" placeholder="Email or Username" />
+                    <input class="p-4 mb-3" type="text" placeholder="Name" />
+                    <input class="p-4 mb-3" type="mobile" placeholder="Name" />
+                    <textarea class="p-4 mb-3" placeholder="Write your message here"></textarea>
+                    <button class="btn w-100  p-3">Send Message</button>
+                </form>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+
 <div class="product-detail accordion-detail">
     <div class="row mb-50 mt-30">
         <div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
@@ -98,11 +209,15 @@
                     <input type="hidden" name="id" class="hidden-product-id" value="{{ ($product->is_variation || !$product->defaultVariation->product_id) ? $product->id : $product->defaultVariation->product_id }}"/>
                     <div class="detail-extralink mb-30">
                         @if (EcommerceHelper::isCartEnabled())
-                            <div class="detail-qty border radius">
-                                <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                <input type="number" min="1" value="1" name="qty" class="qty-val qty-input" />
-                                <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
-                            </div>
+                        <div class="details-quantity">
+
+                            <p>Quantity</p>
+                                <div class="detail-qty border radius">
+                                    <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+                                    <input type="number" min="1" value="1" name="qty" class="qty-val qty-input" />
+                                    <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                </div>
+                        </div>
                         @endif
 
                         <div class="product-extra-link2 @if (EcommerceHelper::isQuickBuyButtonEnabled()) has-buy-now-button @endif">
@@ -121,8 +236,18 @@
                                 <a aria-label="{{ __('Add To Wishlist') }}" class="action-btn hover-up js-add-to-wishlist-button" data-url="{{ route('public.wishlist.add', $product->id) }}" href="#"><i class="fi-rs-heart"></i></a>
                             @endif
                             @if (EcommerceHelper::isCompareEnabled())
-                                <a aria-label="{{ __('Add To Compare') }}" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="{{ route('public.compare.add', $product->id) }}"><i class="fi-rs-shuffle"></i></a>
+                                
                             @endif
+                            <a class="call-btn" href="tel:+01915176696">
+                          
+                          Call Now : 9955 884 5555
+                        </a>
+                        <a class="call-btn  d-flex align-items-center justify-content-center gap-1" href="https://api.whatsapp.com/send?phone=01915176696">
+                          <span class="fs-3 mb-2 ">
+                         <i class="fa-solid fa-phone-volume"></i>
+                          </span>
+                          Whatsapp Order
+                        </a>
                         </div>
                     </div>
                 </form>
@@ -157,6 +282,14 @@
                                 <a href="{{ $product->brand->url }}" title="{{ $product->brand->name }}">{{ $product->brand->name }}</a>
                             </li>
                         @endif
+                        <div class="modal-btn-container">
+                            <a class="modal-btn  " onClick="handleShowSize()" id="size-guide-btn" >Size Guide</a>
+                            <a class="modal-btn  " id="delivery-return-btn" onClick="handleReturn()" >Delivery and Return</a>
+                            <a class="modal-btn  " id="ask-about-btn" onClick="handleAsk()" >Ask about this product</a>
+                            
+
+                        </div>
+
                     </ul>
                 </div>
             </div>
@@ -166,30 +299,30 @@
         <div class="tab-style3">
             <ul class="nav nav-tabs text-uppercase">
                 <li class="nav-item">
-                    <a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description">{{ __('Description') }}</a>
+                    <a class="nav-link active" id="Description-tab" href="#Description">{{ __('Description') }}</a>
                 </li>
                 @if (EcommerceHelper::isReviewEnabled())
                     <li class="nav-item">
-                        <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">{{ __('Reviews') }} ({{ $product->reviews_count }})</a>
+                        <a class="nav-link" id="Reviews-tab"  href="#Reviews">{{ __('Reviews') }} ({{ $product->reviews_count }})</a>
                     </li>
                 @endif
 
                 @if (is_plugin_active('marketplace') && $product->store_id)
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#tab-vendor">{{ __('Vendor') }}</a>
-                    </li>
+                    </li> -->
                 @endif
 
                 @if (is_plugin_active('faq'))
                     @if (count($product->faq_items) > 0)
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#tab-faq">{{ __('Questions and Answers') }}</a>
+                            <a class="nav-link" href="#tab-faq">{{ __('Questions and Answers') }}</a>
                         </li>
                     @endif
                 @endif
             </ul>
             <div class="tab-content shop_info_tab entry-main-content">
-                <div class="tab-pane fade show active" id="Description">
+                <div class=" show active" id="Description">
                     <div class="ck-content">
                         {!! BaseHelper::clean($product->content) !!}
                     </div>
@@ -197,7 +330,7 @@
                 </div>
 
                 @if (is_plugin_active('marketplace') && $product->store_id && $product->store->id)
-                    <div class="tab-pane fade" id="tab-vendor">
+                    <!-- <div class="" id="tab-vendor">
                         <div class="vendor-logo d-flex mb-30">
                             <img src="{{ RvMedia::getImageUrl($product->store->logo, null, false, RvMedia::getDefaultImage()) }}" alt="{{ $product->store->name }}" />
                             <div class="vendor-name ml-15">
@@ -239,11 +372,11 @@
                         <div>
                             {!! BaseHelper::clean($product->store->content) !!}
                         </div>
-                    </div>
+                    </div> -->
                 @endif
 
                 @if (is_plugin_active('faq') && count($product->faq_items) > 0)
-                    <div class="tab-pane fade faqs-list" id="tab-faq">
+                    <div class=" faqs-list" id="tab-faq">
                         <div class="accordion" id="faq-accordion">
                             @foreach($product->faq_items as $faq)
                                 <div class="card">
@@ -267,7 +400,7 @@
                 @endif
 
                 @if (EcommerceHelper::isReviewEnabled())
-                    <div class="tab-pane fade" id="Reviews">
+                    <div class="" id="Reviews">
                         @include('plugins/ecommerce::themes.includes.reviews')
                     </div>
                 @endif
@@ -308,3 +441,38 @@
         </div>
     @endif
 </div>
+
+<script>
+  let cancelBtn=document.getElementById("cancel");
+  const modal=document.getElementById("modal");
+
+const handleShowSize =()=>{
+    modal.classList.remove("hidden");
+}
+
+cancelBtn.addEventListener("click",()=>{
+  modal.classList.add("hidden");
+})
+
+let cancelReturn=document.getElementById("cancel-return");
+  const modalReturn=document.getElementById("modal-return");
+
+const handleReturn =()=>{
+    modalReturn.classList.remove("hidden");
+}
+
+cancelReturn.addEventListener("click",()=>{
+  modalReturn.classList.add("hidden");
+})
+
+let cancelAsk=document.getElementById("cancel-ask");
+  const modalAsk=document.getElementById("modal-ask");
+
+const handleAsk =()=>{
+    modalAsk.classList.remove("hidden");
+}
+
+cancelAsk.addEventListener("click",()=>{
+  modalAsk.classList.add("hidden");
+})
+</script>
