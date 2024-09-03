@@ -23,7 +23,16 @@
                 @endif
             </div>
             <div class="product-action-1 product-action-2">
-                <a class="buy-now-button" href="#">Buy Now</a>
+                {{-- <a class="buy-now-button" href="#">Buy Now</a> --}}
+                @if (EcommerceHelper::isCartEnabled())
+                    <a aria-label="{{ __('Add To Cart') }}"
+                        class="buy-now-button"
+                        data-id="{{ $product->id }}"
+                        data-url="{{ route('public.ajax.cart.store') }}"
+                        href="#">
+                        <i class="fi-rs-shopping-cart mr-5"></i> <span class="d-inline-block">{{ __('Buy Now') }}</span>
+                    </a>
+                @endif
             </div>
             <div class="product-badges product-badges-position product-badges-mrg">
                 @if ($product->isOutOfStock())
@@ -86,6 +95,7 @@
                         </a> -->
                     </div>
                 @endif
+                
             </div>
         </div>
     </div>
