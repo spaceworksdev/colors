@@ -25,51 +25,51 @@
         <div class="modal-text">
         <div class='p-2 p-md-5'>
             <h2 class="h2 fw-bold text-center" style="text-align:center;">Size Guide</h2>
-                                                        <table class="table border-none table-striped ">
-                                                            <tbody>
-                                                            <tr class="">
-                                                                <th>USA</th>
-                                                                <th>UK</th>
-                                                                <th>France</th>
-                                                                <th>Japanese</th>
-                                                                <th>Bust</th>
-                                                                <th>Waist</th>
-                                                            </tr>
-                                                            <tr class="">
-                                                                <th>4</th>
-                                                                <th>8</th>
-                                                                <th>36</th>
-                                                                <th>7</th>
-                                                                <th>32</th>
-                                                                <th>61cm</th>
-                                                            </tr>
-                                                            <tr class="">
-                                                                <th>4</th>
-                                                                <th>8</th>
-                                                                <th>36</th>
-                                                                <th>7</th>
-                                                                <th>32</th>
-                                                                <th>61cm</th>
-                                                            </tr>
-                                                            <tr class="">
-                                                                <th>4</th>
-                                                                <th>8</th>
-                                                                <th>36</th>
-                                                                <th>7</th>
-                                                                <th>32</th>
-                                                                <th>61cm</th>
-                                                            </tr>
-                                                            <tr class="">
-                                                                <th>4</th>
-                                                                <th>8</th>
-                                                                <th>36</th>
-                                                                <th>7</th>
-                                                                <th>32</th>
-                                                                <th>61cm</th>
-                                                            </tr>
-                                                            </tbody>
-                                                            
-                                                        </table>
+            <table class="table border-none table-striped ">
+                <tbody>
+                <tr class="">
+                    <th>USA</th>
+                    <th>UK</th>
+                    <th>France</th>
+                    <th>Japanese</th>
+                    <th>Bust</th>
+                    <th>Waist</th>
+                </tr>
+                <tr class="">
+                    <th>4</th>
+                    <th>8</th>
+                    <th>36</th>
+                    <th>7</th>
+                    <th>32</th>
+                    <th>61cm</th>
+                </tr>
+                <tr class="">
+                    <th>4</th>
+                    <th>8</th>
+                    <th>36</th>
+                    <th>7</th>
+                    <th>32</th>
+                    <th>61cm</th>
+                </tr>
+                <tr class="">
+                    <th>4</th>
+                    <th>8</th>
+                    <th>36</th>
+                    <th>7</th>
+                    <th>32</th>
+                    <th>61cm</th>
+                </tr>
+                <tr class="">
+                    <th>4</th>
+                    <th>8</th>
+                    <th>36</th>
+                    <th>7</th>
+                    <th>32</th>
+                    <th>61cm</th>
+                </tr>
+                </tbody>
+                
+            </table>
         </div>
         </div>
 
@@ -125,7 +125,6 @@
             </div>
         </div>
         </div>
-
     </div>
 </div>
 
@@ -308,9 +307,9 @@
                 @endif
 
                 @if (is_plugin_active('marketplace') && $product->store_id)
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#tab-vendor">{{ __('Vendor') }}</a>
-                    </li> -->
+                    </li>
                 @endif
 
                 @if (is_plugin_active('faq'))
@@ -330,7 +329,7 @@
                 </div>
 
                 @if (is_plugin_active('marketplace') && $product->store_id && $product->store->id)
-                    <!-- <div class="" id="tab-vendor">
+                    <div class="" id="tab-vendor">
                         <div class="vendor-logo d-flex mb-30">
                             <img src="{{ RvMedia::getImageUrl($product->store->logo, null, false, RvMedia::getDefaultImage()) }}" alt="{{ $product->store->name }}" />
                             <div class="vendor-name ml-15">
@@ -372,7 +371,7 @@
                         <div>
                             {!! BaseHelper::clean($product->store->content) !!}
                         </div>
-                    </div> -->
+                    </div>
                 @endif
 
                 @if (is_plugin_active('faq') && count($product->faq_items) > 0)

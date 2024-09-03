@@ -17,16 +17,15 @@
                     </a>
                 @endif
                 @if (EcommerceHelper::isCompareEnabled())
-                    <!-- <a aria-label="{{ __('Add To Compare') }}" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="{{ route('public.compare.add', $product->id) }}">
+                    <a aria-label="{{ __('Add To Compare') }}" href="#" class="action-btn hover-up js-add-to-compare-button" data-url="{{ route('public.compare.add', $product->id) }}">
                         <i class="fi-rs-shuffle"></i>
-                    </a> -->
+                    </a> 
                 @endif
             </div>
             <div class="product-action-1 product-action-2">
-                {{-- <a class="buy-now-button" href="#">Buy Now</a> --}}
                 @if (EcommerceHelper::isCartEnabled())
                     <a aria-label="{{ __('Add To Cart') }}"
-                        class="buy-now-button"
+                        class="buy-now-buttonadd-to-cart-button"
                         data-id="{{ $product->id }}"
                         data-url="{{ route('public.ajax.cart.store') }}"
                         href="#">
