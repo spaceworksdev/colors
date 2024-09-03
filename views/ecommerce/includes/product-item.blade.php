@@ -25,10 +25,10 @@
             <div class="product-action-1 product-action-2">
                 @if (EcommerceHelper::isCartEnabled())
                     <a aria-label="{{ __('Add To Cart') }}"
-                        class="buy-now-buttonadd-to-cart-button"
+                        class="buy-now-button add-to-cart-button"
                         data-id="{{ $product->id }}"
                         data-url="{{ route('public.ajax.cart.store') }}"
-                        href="#">
+                        href="javascript:void(0)">
                         <i class="fi-rs-shopping-cart mr-5"></i> <span class="d-inline-block">{{ __('Buy Now') }}</span>
                     </a>
                 @endif
