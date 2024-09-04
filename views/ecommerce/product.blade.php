@@ -209,13 +209,12 @@
                     <div class="detail-extralink mb-30">
                         @if (EcommerceHelper::isCartEnabled())
                         <div class="details-quantity">
-
                             <p>Quantity</p>
-                                <div class="detail-qty border radius">
-                                    <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                    <input type="number" min="1" value="1" name="qty" class="qty-val qty-input" />
-                                    <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
-                                </div>
+                            <div class="detail-qty border radius">
+                                <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+                                <input type="number" min="1" value="1" name="qty" class="qty-val qty-input" />
+                                <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                            </div>
                         </div>
                         @endif
 
@@ -235,29 +234,19 @@
                                 <a aria-label="{{ __('Add To Wishlist') }}" class="action-btn hover-up js-add-to-wishlist-button" data-url="{{ route('public.wishlist.add', $product->id) }}" href="#"><i class="fi-rs-heart"></i></a>
                             @endif
                             @if (EcommerceHelper::isCompareEnabled())
-                                
                             @endif
-                            <a class="call-btn" href="tel:+01915176696">
-                          
-                          Call Now : 9955 884 5555
-                        </a>
-                        <a class="call-btn  d-flex align-items-center justify-content-center gap-1" href="https://api.whatsapp.com/send?phone=01915176696">
-                          <span class="fs-3 mb-2 ">
-                         <i class="fa-solid fa-phone-volume"></i>
-                          </span>
-                          Whatsapp Order
-                        </a>
+                            <a class="call-btn" href="tel:+8801915176696">  Call Now: +880 1915 176 696  </a>
+                            <a class="call-btn  d-flex align-items-center justify-content-center gap-1" href="https://api.whatsapp.com/send?phone=+8801915176696">
+                                <span class="fs-3 mb-2 "><i class="fa-solid fa-phone-volume"></i></span> Whatsapp Order
+                            </a>
                         </div>
                     </div>
                 </form>
                 <div class="font-xs">
-
                     <ul class="mr-50 float-start">
-
                         <li class="mb-5 @if (! $product->sku) d-none @endif" id="product-sku">
                             <span class="d-inline-block me-1">{{ __('SKU') }}:</span> <span class="sku-text">{{ $product->sku }}</span>
                         </li>
-
                         @if ($product->categories->isNotEmpty())
                             <li class="mb-5">
                                 <span class="d-inline-block me-1">{{ __('Categories') }}:</span>
@@ -270,11 +259,10 @@
                             <li class="mb-5">
                                 <span class="d-inline-block me-1">{{ __('Tags') }}:</span>
                                 @foreach($product->tags as $tag)
-                                    <a href="{{ $tag->url }}" rel="tag" title="{{ $tag->name }}">{{ $tag->name }}</a>@if (!$loop->last),@endif
+                                    <a href="{{ $tag->url }}" rel="tag" title="{{ $tag->name }}">{{ $tag->name }}</a> @if (!$loop->last),@endif
                                 @endforeach
                             </li>
                         @endif
-
                         @if ($product->brand->id)
                             <li class="mb-5">
                                 <span class="d-inline-block me-1">{{ __('Brands') }}:</span>
@@ -282,13 +270,10 @@
                             </li>
                         @endif
                         <div class="modal-btn-container">
-                            <a class="modal-btn  " onClick="handleShowSize()" id="size-guide-btn" >Size Guide</a>
-                            <a class="modal-btn  " id="delivery-return-btn" onClick="handleReturn()" >Delivery and Return</a>
-                            <a class="modal-btn  " id="ask-about-btn" onClick="handleAsk()" >Ask about this product</a>
-                            
-
+                            <a class="modal-btn" onClick="handleShowSize()" id="size-guide-btn" >Size Guide</a>
+                            <a class="modal-btn" id="delivery-return-btn" onClick="handleReturn()" >Delivery and Return</a>
+                            <a class="modal-btn" id="ask-about-btn" onClick="handleAsk()" >Ask about this product</a>
                         </div>
-
                     </ul>
                 </div>
             </div>
