@@ -7,7 +7,7 @@
                     <img class="hover-img" src="{{ RvMedia::getImageUrl(Arr::get($product->images, 1, $product->image), 'product-thumb', false, RvMedia::getDefaultImage()) }}" alt="{{ $product->name }}">
                 </a>
             </div>
-            <div class="product-action-1">
+            <div class="product-action-1 hidden-mobile-device">
                 <a aria-label="{{ __('Quick View') }}" href="#" class="action-btn hover-up js-quick-view-button" data-url="{{ route('public.ajax.quick-view', $product->id) }}">
                     <i class="fi-rs-eye"></i>
                 </a>
@@ -31,6 +31,11 @@
                         href="javascript:void(0)">
                         <i class="fi-rs-shopping-cart mr-5"></i> <span class="d-inline-block">{{ __('Buy Now') }}</span>
                     </a>
+                    @if (EcommerceHelper::isWishlistEnabled())
+                    <a aria-label="{{ __('Add To Wishlist') }}" href="#" class="action-btn card-btn-wishlist hover-up js-add-to-wishlist-button" data-url="{{ route('public.wishlist.add', $product->id) }}">
+                        <i class="fi-rs-heart"></i>
+                    </a>
+                @endif
                 @endif
             </div>
             <div class="product-badges product-badges-position product-badges-mrg">

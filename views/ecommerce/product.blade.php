@@ -209,12 +209,26 @@
                     <div class="detail-extralink mb-30">
                         @if (EcommerceHelper::isCartEnabled())
                         <div class="details-quantity">
-                            <p>Quantity</p>
+                            
                             <div class="detail-qty border radius">
-                                <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+                                <a href="#" class="qty-down">-</a>
                                 <input type="number" min="1" value="1" name="qty" class="qty-val qty-input" />
-                                <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                <a href="#" class="qty-up">+</a>
                             </div>
+                            <div class="product-extra-link2 @if (EcommerceHelper::isQuickBuyButtonEnabled()) has-buy-now-button @endif">
+                            @if (EcommerceHelper::isCartEnabled())
+                                
+                                @if (EcommerceHelper::isQuickBuyButtonEnabled())
+                                    <button  class="button button-buy-now ms-2 @if ($product->isOutOfStock()) btn-disabled @endif"
+                                        type="submit" name="checkout"
+                                        @if ($product->isOutOfStock()) disabled @endif>{{ __('Buy Now') }}</button>
+                                @endif
+                            @endif
+
+                            
+                            @if (EcommerceHelper::isCompareEnabled())
+                            @endif
+                        </div>
                         </div>
                         @endif
 
@@ -223,11 +237,7 @@
                                 <button type="submit"
                                     class="button button-add-to-cart @if ($product->isOutOfStock()) btn-disabled @endif"
                                     @if ($product->isOutOfStock()) disabled @endif><i class="fi-rs-shopping-cart"></i>{{ __('Add to cart') }}</button>
-                                @if (EcommerceHelper::isQuickBuyButtonEnabled())
-                                    <button class="button button-buy-now ms-2 @if ($product->isOutOfStock()) btn-disabled @endif"
-                                        type="submit" name="checkout"
-                                        @if ($product->isOutOfStock()) disabled @endif>{{ __('Buy Now') }}</button>
-                                @endif
+                                
                             @endif
 
                             @if (EcommerceHelper::isWishlistEnabled())
@@ -235,12 +245,12 @@
                             @endif
                             @if (EcommerceHelper::isCompareEnabled())
                             @endif
-                        </div>
-                        <div class="product-extra-link2">
-                            <a class="call-btn" href="tel:+8801915176696">Call Now: +880 1915 176 696</a>
-                            <a class="call-btn  d-flex align-items-center justify-content-center gap-1" href="https://api.whatsapp.com/send?phone=8801915176696">
-                                <span class="fs-3 mb-2 "><i class="fa-solid fa-phone-volume"></i></span> Whatsapp Order
-                            </a>
+                            <div class="product-extra-link2">
+                                <a class="call-btn" href="tel:+8801915176696">Call Now: +880 1915 176 696</a>
+                                <a class="call-btn  d-flex align-items-center justify-content-center gap-1" href="https://api.whatsapp.com/send?phone=8801915176696">
+                                    <span class="fs-3 mb-2 "><i class="fa-solid fa-phone-volume"></i></span> Whatsapp Order
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </form>
