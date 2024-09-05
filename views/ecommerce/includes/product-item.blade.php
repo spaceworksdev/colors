@@ -32,7 +32,7 @@
                         <i class="fi-rs-shopping-cart mr-5"></i> <span class="d-inline-block">{{ __('Buy Now') }}</span>
                     </a>
                     @if (EcommerceHelper::isWishlistEnabled())
-                    <a aria-label="{{ __('Add To Wishlist') }}" href="#" class="action-btn card-btn-wishlist hover-up js-add-to-wishlist-button" data-url="{{ route('public.wishlist.add', $product->id) }}">
+                    <a aria-label="{{ __('Add To Wishlist') }}" href="#" class="action-btn hidden-large-device card-btn-wishlist hover-up js-add-to-wishlist-button" data-url="{{ route('public.wishlist.add', $product->id) }}">
                         <i class="fi-rs-heart"></i>
                     </a>
                 @endif
