@@ -245,12 +245,15 @@
                             @endif
                             @if (EcommerceHelper::isCompareEnabled())
                             @endif
-                            <div class="product-extra-link2">
-                                <a class="call-btn" href="tel:+8801915176696">Call Now: +880 1915 176 696</a>
-                                <a class="call-btn  d-flex align-items-center justify-content-center gap-1" href="https://api.whatsapp.com/send?phone=8801915176696">
-                                    <span class="fs-3 mb-2 "><i class="fa-solid fa-phone-volume"></i></span> Whatsapp Order
-                                </a>
-                            </div>
+                            @if ($hotline = theme_option('hotline'))
+                                <div class="product-extra-link2">
+                                    <a class="call-btn" href="tel:+{{ trim($hotline) }}">Call Now: +{{ $hotline }}</a>
+                                    <a class="call-btn  d-flex align-items-center justify-content-center gap-1" href="https://api.whatsapp.com/send?phone={{ trim($hotline) }}">
+                                        <span class="fs-3 mb-2 "><i class="fa-solid fa-phone-volume"></i></span> Whatsapp Order
+                                    </a>
+                                </div>
+                            @endif
+                            
                         </div>
                     </div>
                 </form>
