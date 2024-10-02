@@ -442,36 +442,38 @@
 </div>
 
 <script>
-  let cancelBtn=document.getElementById("cancel");
-  const modal=document.getElementById("modal");
+    /**
+    let cancelBtn=document.getElementById("cancel");
+    const modal=document.getElementById("modal");
 
-const handleShowSize =()=>{
-    modal.classList.remove("hidden");
-}
+    const handleShowSize =()=>{
+        modal.classList.remove("hidden");
+    }
 
-cancelBtn.addEventListener("click",()=>{
-  modal.classList.add("hidden");
-})
+    cancelBtn.addEventListener("click",()=>{
+    modal.classList.add("hidden");
+    })
 
-let cancelReturn=document.getElementById("cancel-return");
-  const modalReturn=document.getElementById("modal-return");
+    let cancelReturn=document.getElementById("cancel-return");
+    const modalReturn=document.getElementById("modal-return");
 
-const handleReturn =()=>{
-    modalReturn.classList.remove("hidden");
-}
+    const handleReturn =()=>{
+        modalReturn.classList.remove("hidden");
+    }
 
-cancelReturn.addEventListener("click",()=>{
-  modalReturn.classList.add("hidden");
-})
+    cancelReturn.addEventListener("click",()=>{
+    modalReturn.classList.add("hidden");
+    })
 
-let cancelAsk=document.getElementById("cancel-ask");
-  const modalAsk=document.getElementById("modal-ask");
+    let cancelAsk=document.getElementById("cancel-ask");
+    const modalAsk=document.getElementById("modal-ask");
 
-const handleAsk =()=>{
-    modalAsk.classList.remove("hidden");
-}
+    const handleAsk =()=>{
+        modalAsk.classList.remove("hidden");
+    }
 
-cancelAsk.addEventListener("click",()=>{
-  modalAsk.classList.add("hidden");
-})
+    cancelAsk.addEventListener("click",()=>{
+    modalAsk.classList.add("hidden");
+    })
+    */
 </script>
